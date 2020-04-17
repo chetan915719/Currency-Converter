@@ -25,7 +25,7 @@ SECRET_KEY = '0atwhg@wg6wlp^wa24z03167)8u-b(e=j4(*u81p4$^zfz0me!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cticurrencyapp.herokuapp.com']
 
 
 # Application definition
