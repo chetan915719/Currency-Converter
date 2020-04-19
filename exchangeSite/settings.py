@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0atwhg@wg6wlp^wa24z03167)8u-b(e=j4(*u81p4$^zfz0me!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['cticurrencyapp.herokuapp.com']
+ALLOWED_HOSTS = ['cticurrencyapp.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'exchangeSite.urls'
@@ -128,3 +129,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'index'
 
 LOGIN_URL = 'login'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
