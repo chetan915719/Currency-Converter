@@ -11,7 +11,11 @@
         {% csrf_token %}
         <div class="input-group mb-3">
             <select class="custom-select" id="from_country" name="from_country">
+                {% if f_country %}
+                <option selected>{{f_country}}</option>
+                {% else %}
                 <option selected>USD</option>
+                {% endif %}
                 {% for code in codes%}
                 <option value="{{code}}">{{code}}</option>
                 {% endfor%}
@@ -19,7 +23,11 @@
         </div>
         <div class="input-group mb-3">
             <select class="custom-select" id="to_country" name="to_country">
+                {% if t_country %}
+                <option selected>{{t_country}}</option>
+                {% else %}
                 <option selected>INR</option>
+                {% endif %}
                 {% for code in codes%}
                 <option value="{{code}}">{{code}}</option>
                 {% endfor%}

@@ -19,7 +19,11 @@ def index(request):
         f_country = form['from_country']
         t_country = form['to_country']
         rate = c.convert(f_country,t_country)
-        return render(request,"home/home.html",{'codes':code , 'rate':rate})
+
+        context['f_country'] = f_country
+        context['t_country'] = t_country
+        context['rate'] = rate
+        return render(request,"home/home.html",context)
     
     return render(request,"home/home.html",context)
 
